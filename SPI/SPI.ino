@@ -2,40 +2,29 @@
 #include <SPI.h>
 #include "BigNumber.h"
 
-#define CS PM_4 //PA_5
-#define UDCLK PA_6 //PD_2
-#define IO_RESET PD_7 //PA_4
+#define CS PM_4 
+#define UDCLK PA_6 
+#define IO_RESET PD_7 
 #define MRESET	PM_5
 #define SPI_module 1
 #define SYSCLOCK 60000000
 #define DDS_NBITS  48
 
-int SPI_delay = 150;
-
-byte resp6[] = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
-byte resp4[] = {0x0, 0x0, 0x0, 0x0};
-
+int SPI_delay = 150;//us
+char* resp;
 
 DDS DDS_JRO(CS,UDCLK,IO_RESET,MRESET,SPI_module,SPI_delay);
-DDS_function math_DDS;
-
+DDS_function DDS_tools;
 
 void setup() {
-  
+
   Serial.begin(115200);
   Serial.println("#####################################");
 
-	SPI.setModule(1);
-	SPI.setBitOrder(MSBFIRST);
-	SPI.begin();
-
-	//Initial reset
-	DDS_JRO.reset();
-  delay(1);
-
-  
-
-
+	DDS_JRO.init();
+	DDS_JRO.io_reset();
+  delayMicroseconds(SPI_delay);
+	
   //Set initial configuration to DDS using SPI
   off(CS);
   SPI.transfer(0x07);
@@ -48,73 +37,19 @@ void setup() {
   delayMicroseconds(SPI_delay);
   SPI.transfer(0x01);
   on(CS);
-
   delayMicroseconds(SPI_delay);
 
   //PIN Inicialization
   //Initial reset
-  DDS_JRO.io_reset();
+  //DDS_JRO.io_reset();
 
   // Verify the information
-  off(CS);
-  SPI.transfer(0x87);
-  delayMicroseconds(SPI_delay);
-  resp4[0] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp4[1] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp4[2] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp4[3] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  on(CS);
-
-  Serial.println("Read information set: ");
-  Serial.print("[ ");
-  Serial.print(resp4[0], HEX);
-  Serial.print(" ,");
-  Serial.print(resp4[1], HEX);
-  Serial.print(" ,");
-  Serial.print(resp4[2], HEX);
-  Serial.print(" ,");
-  Serial.print(resp4[3], HEX);
-  Serial.println(" ]");
+  resp=DDS_JRO.readData(0x87,4);
+  DDS_tools.print(resp);
   
-  //Set off
-  off(UDCLK);
-  on(IO_RESET);
-  delayMicroseconds(10);
-  off(IO_RESET);
-  delayMicroseconds(10);
-
-  //Set initial configuration to frequency
   char* freq ;
-  freq = math_DDS._freq2binary(500000, SYSCLOCK);
-
-  off(CS);
-  SPI.transfer(0x02);
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(*(freq + 0));
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(*(freq + 1));
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(*(freq + 2));
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(*(freq + 3));
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(*(freq + 4));
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(*(freq + 5));
-  delayMicroseconds(SPI_delay);
-
-  on(CS);
-
-  delayMicroseconds(10);
-  on(UDCLK);
-  delayMicroseconds(10);
-  off(UDCLK);
-  delayMicroseconds(SPI_delay);
-
+  freq = DDS_tools.freq2binary(1000000, SYSCLOCK);
+	DDS_JRO.writeData(0x02,6,freq);
 
 
   Serial.println("Frequency set: ");
@@ -134,49 +69,16 @@ void setup() {
 
 
   delayMicroseconds(SPI_delay);
-  off(CS);
-  SPI.transfer(0x82);
-  delayMicroseconds(SPI_delay);
-  resp6[0] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp6[1] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp6[2] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp6[3] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp6[4] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  resp6[5] = SPI.transfer(0x00);
-  delayMicroseconds(SPI_delay);
-  on(CS);
-
-  Serial.println("Read frecuency Tuning Word: ");
-  Serial.print("[ ");
-  Serial.print(resp6[0], HEX);
-  Serial.print(" ,");
-  Serial.print(resp6[1], HEX);
-  Serial.print(" ,");
-  Serial.print(resp6[2], HEX);
-  Serial.print(" ,");
-  Serial.print(resp6[3], HEX);
-  Serial.print(" ,");
-  Serial.print(resp6[4], HEX);
-  Serial.print(" ,");
-  Serial.print(resp6[5], HEX);
-  Serial.println(" ]");
-
-
- 	on(IO_RESET);
-
-
-
+	resp=DDS_JRO.readData(0x02,6);
+	DDS_tools.print(resp);
+	on(IO_RESET);
+	while(1);
 }
 
 void loop() {
 
 
-
+	
 }
 
 void on(int x) {
