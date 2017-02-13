@@ -3,13 +3,14 @@
 #include "BigNumber.h"
 
 
-DDS_function math_DDS;
+
 
 #define CS PM_4 //PA_5
 #define UDCLK PA_6 //PD_2
 #define IO_RESET PD_7 //PA_4
 #define MRESET	PM_5
-#define SYSCLOCK_1 60000000
+
+#define SYSCLOCK 60000000
 #define DDS_NBITS  48
 
 int SPI_delay = 150;
@@ -17,7 +18,10 @@ int SPI_delay = 150;
 byte resp6[] = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
 byte resp4[] = {0x0, 0x0, 0x0, 0x0};
 
-DDS DDS_JRO;
+
+DDS DDS_JRO(CS,UDCLK,IO_RESET,MRESET);
+DDS_function math_DDS;
+
 
 void setup() {
   BigNumber::begin();
@@ -38,12 +42,18 @@ void setup() {
   off(MRESET);
   delay(1);
 
-  DDS_JRO.reset(IO_RESET, 100);
  
   //PIN Inicialization
   //Initial reset
 
   delay(1);
+
+  //Initial reset
+  on(IO_RESET);
+  delayMicroseconds(SPI_delay);
+  off(IO_RESET);
+  delayMicroseconds(SPI_delay);
+
   //Set initial configuration to DDS using SPI
   off(CS);
   SPI.transfer(0x07);
@@ -99,8 +109,8 @@ void setup() {
   delayMicroseconds(10);
 
   //Set initial configuration to frequency
-  byte *freq ;
-  freq = math_DDS._freq2binary(20000, SYSCLOCK_1);
+  char* freq ;
+  freq = math_DDS._freq2binary(100000, SYSCLOCK);
 
   off(CS);
   SPI.transfer(0x02);
