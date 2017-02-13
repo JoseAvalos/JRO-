@@ -2,14 +2,11 @@
 #include <SPI.h>
 #include "BigNumber.h"
 
-
-
-
 #define CS PM_4 //PA_5
 #define UDCLK PA_6 //PD_2
 #define IO_RESET PD_7 //PA_4
 #define MRESET	PM_5
-
+#define SPI_module 1
 #define SYSCLOCK 60000000
 #define DDS_NBITS  48
 
@@ -19,40 +16,25 @@ byte resp6[] = {0x0, 0x0, 0x0, 0x0, 0x0, 0x0};
 byte resp4[] = {0x0, 0x0, 0x0, 0x0};
 
 
-DDS DDS_JRO(CS,UDCLK,IO_RESET,MRESET);
+DDS DDS_JRO(CS,UDCLK,IO_RESET,MRESET,SPI_module,SPI_delay);
 DDS_function math_DDS;
 
 
 void setup() {
-  BigNumber::begin();
-  pinMode(CS, OUTPUT);
-  pinMode(UDCLK, OUTPUT);
-  pinMode(IO_RESET, OUTPUT);
-  pinMode(MRESET, OUTPUT);
-
+  
   Serial.begin(115200);
   Serial.println("#####################################");
 
-  SPI.setModule(1);
-  SPI.setBitOrder(MSBFIRST);
-  SPI.begin();
+	SPI.setModule(1);
+	SPI.setBitOrder(MSBFIRST);
+	SPI.begin();
 
-  on(MRESET);
-  delay(1);
-  off(MRESET);
-  delay(1);
-
- 
-  //PIN Inicialization
-  //Initial reset
-
+	//Initial reset
+	DDS_JRO.reset();
   delay(1);
 
-  //Initial reset
-  on(IO_RESET);
-  delayMicroseconds(SPI_delay);
-  off(IO_RESET);
-  delayMicroseconds(SPI_delay);
+  
+
 
   //Set initial configuration to DDS using SPI
   off(CS);
@@ -71,10 +53,7 @@ void setup() {
 
   //PIN Inicialization
   //Initial reset
-  on(IO_RESET);
-  delayMicroseconds(SPI_delay);
-  off(IO_RESET);
-  delayMicroseconds(SPI_delay);
+  DDS_JRO.io_reset();
 
   // Verify the information
   off(CS);
@@ -110,7 +89,7 @@ void setup() {
 
   //Set initial configuration to frequency
   char* freq ;
-  freq = math_DDS._freq2binary(100000, SYSCLOCK);
+  freq = math_DDS._freq2binary(500000, SYSCLOCK);
 
   off(CS);
   SPI.transfer(0x02);
