@@ -24,53 +24,20 @@ void setup() {
 	DDS_JRO.init();
 	DDS_JRO.io_reset();
   delayMicroseconds(SPI_delay);
-	
-  //Set initial configuration to DDS using SPI
-  off(CS);
-  SPI.transfer(0x07);
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(0x10);
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(0x64);
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(0x01);
-  delayMicroseconds(SPI_delay);
-  SPI.transfer(0x01);
-  on(CS);
-  delayMicroseconds(SPI_delay);
-
-  //PIN Inicialization
-  //Initial reset
-  //DDS_JRO.io_reset();
 
   // Verify the information
   resp=DDS_JRO.readData(0x87,4);
-  DDS_tools.print(resp);
+  DDS_tools.print(resp,4);
   
   char* freq ;
-  freq = DDS_tools.freq2binary(1000000, SYSCLOCK);
+  freq = DDS_tools.freq2binary(5000000, SYSCLOCK);
 	DDS_JRO.writeData(0x02,6,freq);
 
 
-  Serial.println("Frequency set: ");
-  Serial.print("[ ");
-  Serial.print(*(freq + 0), HEX);
-  Serial.print(" ,");
-  Serial.print(*(freq + 1), HEX);
-  Serial.print(" ,");
-  Serial.print(*(freq + 2), HEX);
-  Serial.print(" ,");
-  Serial.print(*(freq + 3), HEX);
-  Serial.print(" ,");
-  Serial.print(*(freq + 4), HEX);
-  Serial.print(" ,");
-  Serial.print(*(freq + 5), HEX);
-  Serial.println(" ]");
-
-
+ // delete[] resp;
   delayMicroseconds(SPI_delay);
 	resp=DDS_JRO.readData(0x02,6);
-	DDS_tools.print(resp);
+	DDS_tools.print(resp,6);
 	on(IO_RESET);
 	while(1);
 }
