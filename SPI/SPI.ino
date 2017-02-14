@@ -18,14 +18,18 @@ DDS_function DDS_tools;
 
 void setup() 
 {
+
+	SPI.setModule(1);
+	SPI.setBitOrder(MSBFIRST);
+	SPI.begin();
+
 	Serial.begin(115200);
   Serial.println("#####################################");
 	DDS_JRO.init();
-	DDS_JRO.io_reset();
   resp=DDS_JRO.readData(0x87,4);
-  DDS_tools.print(resp,4);
+ 	DDS_tools.print(resp,4);
   char* freq ;
-  freq = DDS_tools.freq2binary(20000000, SYSCLOCK);
+  freq = DDS_tools.freq2binary(200000, SYSCLOCK);
 	DDS_JRO.writeData(0x02,6,freq);
 	resp=DDS_JRO.readData(0x02,6);
 	DDS_tools.print(resp,6);
