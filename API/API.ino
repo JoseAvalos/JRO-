@@ -25,7 +25,6 @@
 /*   Adaptation by Jose Avalos. January 2017
     Jicamarca Radio Observatory - JRO
  *******************************************************************/
-
 // Energia Libraries
 #include <SPI.h>
 #include <Ethernet.h>
@@ -45,7 +44,7 @@
 #define SPI_module 1
 #define SYSCLOCK 60000000
 #define DDS_NBITS  48
-
+#define DEFAULT_FREQ 49920000
 
   
 EthernetServer server(80);
@@ -54,14 +53,14 @@ char mac_tiva[6] ={0x00, 0x1A, 0xB6, 0x02, 0xEC, 0x3E };
 char IP[4]={10,10,50,199};
 int SPI_delay = 150;//us
 char* resp;
+char* freq ;
 
 
-DDS DDS_JRO(CS,UDCLK,IO_RESET,MRESET,SPI_module,SPI_delay);
-DDS_function DDS_tools;
+DDS DDS_JRO(CS,UDCLK,IO_RESET,MRESET);
 API API_DDS(&DDS_JRO);
 
-
-void setup(){
+void setup()
+{
   SPI.setModule(1);
   SPI.setBitOrder(MSBFIRST);
   SPI.begin();
@@ -70,38 +69,44 @@ void setup(){
   Serial.print("Server is at ");
   Serial.println(Ethernet.localIP());
   Serial.println("Configuration for DDS has already inicializated.");
+  DDS_JRO.init();
+  //freq = DDS_JRO.freq2binary(40000000);
+  DDS_JRO.wrFrequency1(freq);
+  freq = DDS_JRO.freq2binary(12480000);
+  //DDS_JRO.wrFrequency1(freq);
+
 }
 
-void loop(){
-
-EthernetClient _client = server.available();
-//ArduinoHttpServer::StreamHttpReply httpReply(_client, "application/json");
-int DDS_case;
-
-DDS_case=API_DDS.readcommand(_client);
-//Serial.print("DDS_case ");
-//Serial.println(DDS_case);
-
-/*
--------------------------------------
-|DDS_case   |         SITUATION       |
--------------------------------------
-|     0    | Default no detected     |
--------------------------------------
-|     1     | READ                    |
--------------------------------------
-|     2     | STATUS                  |
--------------------------------------
-|     3     |` GET - NO IDENTIFY       |
--------------------------------------
-|     4     | WRITE                   |
--------------------------------------
-|     5     | START                   |
--------------------------------------
-|     6     | STOP                    |
--------------------------------------
-|     7     | POST - NO IDENTIFY      |
--------------------------------------
-*/
+void loop()
+{
+  EthernetClient _client = server.available();
+  int DDS_case;
+  DDS_case=API_DDS.readcommand(_client);
+  ArduinoHttpServer::StreamHttpRequest<50000> httpRequest(_client);
+  ArduinoHttpServer::StreamHttpReply httpReply(_client, "application/json");
+        
+  //Serial.print("DDS_case ");
+  //Serial.println(DDS_case);
+  /*
+  -------------------------------------
+  |DDS_case   |         SITUATION       |
+  -------------------------------------
+  |     0    | Default no detected     |
+  -------------------------------------
+  |     1     | READ                    |
+  -------------------------------------
+  |     2     | STATUS                  |
+  -------------------------------------
+  |     3     |` GET - NO IDENTIFY       |
+  -------------------------------------
+  |     4     | WRITE                   |
+  -------------------------------------
+  |     5     | START                   |
+  -------------------------------------
+  |     6     | STOP                    |
+  -------------------------------------
+  |     7     | POST - NO IDENTIFY      |
+  -------------------------------------
+  */
 }
 
