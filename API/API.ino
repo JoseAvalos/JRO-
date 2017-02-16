@@ -34,6 +34,9 @@
 #include <ArduinoJson.h>
 #include <ArduinoHttpServer.h>
 #include <AD9854.h>
+//#include <iostream>
+#include <string>
+
 #include "Tiva.h"
 #include "BigNumber.h"
 
@@ -46,67 +49,137 @@
 #define DDS_NBITS  48
 #define DEFAULT_FREQ 49920000
 
-  
+
+IPAddress IP(10, 10, 50, 179);
+byte MAC[] ={0x00, 0x1A, 0xB6, 0x02, 0xEC, 0x3E };
 EthernetServer server(80);
 
-char mac_tiva[6] ={0x00, 0x1A, 0xB6, 0x02, 0xEC, 0x3E };
-char IP[4]={10,10,50,199};
-int SPI_delay = 150;//us
 char* resp;
 char* freq ;
 
+DDS DDS_JRO(SYSCLOCK,CS,UDCLK,IO_RESET,MRESET);
+API API_JRO(&DDS_JRO,IP,MAC);  
 
-DDS DDS_JRO(CS,UDCLK,IO_RESET,MRESET);
-API API_DDS(&DDS_JRO);
 
 void setup()
 {
-  SPI.setModule(1);
+  SPI.setModule(SPI_module);
   SPI.setBitOrder(MSBFIRST);
   SPI.begin();
-  Serial.begin(115200);
+
   server.begin();
+
+  Serial.begin(115200);
+  Serial.println("#####################################");
   Serial.print("Server is at ");
   Serial.println(Ethernet.localIP());
   Serial.println("Configuration for DDS has already inicializated.");
-  DDS_JRO.init();
-  //freq = DDS_JRO.freq2binary(40000000);
-  DDS_JRO.wrFrequency1(freq);
-  freq = DDS_JRO.freq2binary(12480000);
-  //DDS_JRO.wrFrequency1(freq);
 
+  DDS_JRO.init();
+  DDS_JRO.io_reset();
+  DDS_JRO.wrFrequency1(DDS_JRO.freq2binary(DEFAULT_FREQ/4));
 }
 
 void loop()
 {
   EthernetClient _client = server.available();
   int DDS_case;
-  DDS_case=API_DDS.readcommand(_client);
-  ArduinoHttpServer::StreamHttpRequest<50000> httpRequest(_client);
-  ArduinoHttpServer::StreamHttpReply httpReply(_client, "application/json");
-        
-  //Serial.print("DDS_case ");
-  //Serial.println(DDS_case);
-  /*
-  -------------------------------------
-  |DDS_case   |         SITUATION       |
-  -------------------------------------
-  |     0    | Default no detected     |
-  -------------------------------------
-  |     1     | READ                    |
-  -------------------------------------
-  |     2     | STATUS                  |
-  -------------------------------------
-  |     3     |` GET - NO IDENTIFY       |
-  -------------------------------------
-  |     4     | WRITE                   |
-  -------------------------------------
-  |     5     | START                   |
-  -------------------------------------
-  |     6     | STOP                    |
-  -------------------------------------
-  |     7     | POST - NO IDENTIFY      |
-  -------------------------------------
-  */
+  DDS_case=API_JRO.readcommand(_client);
+  
+  // if(DDS_case!=0)
+  // {
+  //   // ArduinoHttpServer::StreamHttpRequest<50000> httpRequest(_client);
+  //   // ArduinoHttpServer::StreamHttpReply _httpReply(_client, "application/json");  
+  //   // char* data = (char*) httpRequest.getBody();
+  
+  //   Serial.print("DDS_case ");
+  //   Serial.println(DDS_case);
+    
+  //   /*
+  //   -------------------------------------
+  //   |DDS_case   |         SITUATION       |
+  //   -------------------------------------
+  //   |     0    | Default no detected     |
+  //   -------------------------------------
+  //   |     1     | READ                    |
+  //   -------------------------------------
+  //   |     2     | STATUS                  |
+  //   -------------------------------------
+  //   |     3     |` GET - NO IDENTIFY       |
+  //   -------------------------------------
+  //   |     4     | WRITE                   |
+  //   -------------------------------------
+  //   |     5     | START                   |
+  //   -------------------------------------
+  //   |     6     | STOP                    |
+  //   -------------------------------------
+  //   |     7     | POST - NO IDENTIFY      |
+  //   -------------------------------------
+  //   */
+  //   // switch ( DDS_case ) 
+  //   // {
+  //   //   case 1:
+  //   //     _httpReply.send("{\"read\":\"ok\"}");
+  //   //     break;
+      
+  //   //   case 2:
+  //   //     {
+  //   //       if(DDS_JRO.verifyconnection())
+  //   //       {
+  //   //         JsonObject&  dds_status = jsonBuffer.createObject();
+  //   //         dds_status["Conection"] = "YES";
+  //   //         dds_status["Clock"]= SYSCLOCK ;
+  //   //         dds_status["Frequency1"] =DDS_JRO.binary2freq(DDS_JRO.rdFrequency1())*DDS_JRO.getMultiplier();
+  //   //         dds_status["Frequency2"] =DDS_JRO.binary2freq(DDS_JRO.rdFrequency2())*DDS_JRO.getMultiplier();
+  //   //         dds_status["Multiplier"] =double(DDS_JRO.getMultiplier());
+  //   //         dds_status["Clock"] =DDS_JRO.getclock();
+
+  //   //         String hola1;
+  //   //         dds_status.printTo(hola1);
+  //   //         const String& msg_json = hola1;
+  //   //         _httpReply.send(msg_json);
+  //   //       }
+  //   //       else
+  //   //       {
+  //   //         _httpReply.send("{\"Conection\":\"NO\"}");
+  //   //       }
+
+  //   //     }
+  //   //     break;
+
+  //   //   case 4:
+  //   //     {
+  //   //       //StaticJsonBuffer<4000> jsonBuffer_1;
+  //   //       //JsonObject& jsondata = jsonBuffer_1.parseObject(data);
+  //   //       //String hola2;
+  //   //       //jsondata.printTo(hola2);
+  //   //       //Serial.println(hola2);
+          
+  //   //       //double freq_1 =double(jsondata["frequency1"]);
+  //   //       //Serial.println(freq_1);
+  //   //       //char* prueba= DDS_JRO.freq2binary(freq_1);
+  //   //       //DDS_JRO.print(prueba,8);
+  //   //       //int exito= DDS_JRO.wrFrequency1(prueba);
+  //   //       //Serial.println(exito);
+  //   //       _httpReply.send("{\"write\":\"2\"}");
+  //   //     }
+  //   //     break;
+
+  //   //   case 5:
+  //   //     {
+  //   //       _httpReply.send("{\"start\":\"ok\"}");
+  //   //     }
+  //   //     break;
+
+  //   //   case 6:
+  //   //     {
+  //   //     _httpReply.send("{\"stop\":\"ok\"}");
+  //   //     }
+  //   //     break;
+      
+  //   //   default:
+  //   //     break;
+  //   // }
+  // }
 }
 
