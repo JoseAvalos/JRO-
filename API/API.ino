@@ -35,16 +35,20 @@
 #include <string>
 #include "Tiva.h"
 
-#define CS PM_4
-#define UDCLK PA_6
-#define IO_RESET PD_7
-#define MRESET  PM_5
+
+#define RESET_TIVA PL_4
+#define MRESET  PE_4
+#define OSK PC_4
+#define CS PC_5
+#define UDCLK PB_2
+#define IO_RESET PB_3
+
 #define SPI_module 1
 #define SYSCLOCK 60000000
 #define DDS_NBITS  48
 #define DEFAULT_FREQ 49920000
-#define RESET_TIVA PA_5
 #define LED RED_LED
+
 
 
 IPAddress IP(10, 10, 50, 185);
@@ -57,7 +61,7 @@ API API_JRO(&DDS_JRO, IP, MAC);
 
 void setup()
 {
-  SPI.setModule(1);
+  SPI.setModule(2);
   SPI.setBitOrder(MSBFIRST);
   SPI.begin();
 
