@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="7.7.0">
+<drawing>
+<settings>
+<setting alwaysvectorfont="no"/>
+<setting verticaltext="up"/>
+</settings>
+<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<layers>
+<layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="2" name="Route2" color="1" fill="3" visible="no" active="yes"/>
+<layer number="3" name="Route3" color="4" fill="3" visible="no" active="yes"/>
+<layer number="4" name="Route4" color="1" fill="4" visible="no" active="yes"/>
+<layer number="5" name="Route5" color="4" fill="4" visible="no" active="yes"/>
+<layer number="6" name="Route6" color="1" fill="8" visible="no" active="yes"/>
+<layer number="7" name="Route7" color="4" fill="8" visible="no" active="yes"/>
+<layer number="8" name="Route8" color="1" fill="2" visible="no" active="yes"/>
+<layer number="9" name="Route9" color="4" fill="2" visible="no" active="yes"/>
+<layer number="10" name="Route10" color="1" fill="7" visible="no" active="yes"/>
+<layer number="11" name="Route11" color="4" fill="7" visible="no" active="yes"/>
+<layer number="12" name="Route12" color="1" fill="5" visible="no" active="yes"/>
+<layer number="13" name="Route13" color="4" fill="5" visible="no" active="yes"/>
+<layer number="14" name="Route14" color="1" fill="6" visible="no" active="yes"/>
+<layer number="15" name="Route15" color="4" fill="6" visible="no" active="yes"/>
+<layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="17" name="Pads" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="18" name="Vias" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
+<layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
+<layer number="37" name="tTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="38" name="bTest" color="7" fill="1" visible="no" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
+<layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
+<layer number="47" name="Measures" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="91" name="Nets" color="2" fill="1" visible="yes" active="yes"/>
+<layer number="92" name="Busses" color="1" fill="1" visible="yes" active="yes"/>
+<layer number="93" name="Pins" color="2" fill="1" visible="no" active="yes"/>
+<layer number="94" name="Symbols" color="4" fill="1" visible="yes" active="yes"/>
+<layer number="95" name="Names" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="96" name="Values" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="97" name="Info" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="98" name="Guide" color="6" fill="1" visible="yes" active="yes"/>
+</layers>
+<library>
+<description>&lt;b&gt;Tiva Shield&lt;/b&gt; 
+Shields for the tiva serie c connections</description>
+<packages>
+<package name="EK-TM4C1294XL-SH">
+<description>Shield for Tiva EK-TM4C1294XL</description>
+<wire x1="18.921" y1="19.165" x2="44.579" y2="19.165" width="0.2032" layer="22"/>
+<wire x1="44.579" y1="19.165" x2="44.579" y2="24.015" width="0.2032" layer="22"/>
+<wire x1="44.579" y1="24.015" x2="18.921" y2="24.015" width="0.2032" layer="22"/>
+<wire x1="18.921" y1="24.015" x2="18.921" y2="19.165" width="0.2032" layer="22"/>
+<pad name="X8_1" x="43.18" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_2" x="43.18" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_3" x="40.64" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_4" x="40.64" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_5" x="38.1" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_6" x="38.1" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_7" x="35.56" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_8" x="35.56" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_9" x="33.02" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_10" x="33.02" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_11" x="30.48" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_12" x="30.48" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_13" x="27.94" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_14" x="27.94" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_15" x="25.4" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_16" x="25.4" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_17" x="22.86" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_18" x="22.86" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_19" x="20.32" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_20" x="20.32" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="16.718" y="22.852" size="1.1" layer="22" font="vector" rot="SMR0">19</text>
+<text x="16.893" y="19.254" size="1.1" layer="22" font="vector" rot="SMR0">20</text>
+<text x="-41.91" y="13.335" size="1.27" layer="25">&gt;NAME</text>
+<text x="-41.91" y="10.795" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="19.97" y1="22.51" x2="20.67" y2="23.21" layer="52"/>
+<rectangle x1="19.97" y1="19.97" x2="20.67" y2="20.67" layer="52"/>
+<rectangle x1="22.51" y1="22.51" x2="23.21" y2="23.21" layer="52"/>
+<rectangle x1="22.51" y1="19.97" x2="23.21" y2="20.67" layer="52"/>
+<rectangle x1="25.05" y1="22.51" x2="25.75" y2="23.21" layer="52"/>
+<rectangle x1="25.05" y1="19.97" x2="25.75" y2="20.67" layer="52"/>
+<rectangle x1="27.59" y1="22.51" x2="28.29" y2="23.21" layer="52"/>
+<rectangle x1="27.59" y1="19.97" x2="28.29" y2="20.67" layer="52"/>
+<rectangle x1="30.13" y1="22.51" x2="30.83" y2="23.21" layer="52"/>
+<rectangle x1="30.13" y1="19.97" x2="30.83" y2="20.67" layer="52"/>
+<rectangle x1="32.67" y1="22.51" x2="33.37" y2="23.21" layer="51" rot="R180"/>
+<rectangle x1="32.67" y1="19.97" x2="33.37" y2="20.67" layer="52" rot="R90"/>
+<rectangle x1="35.21" y1="22.51" x2="35.91" y2="23.21" layer="52"/>
+<rectangle x1="35.21" y1="19.97" x2="35.91" y2="20.67" layer="52"/>
+<rectangle x1="37.75" y1="22.51" x2="38.45" y2="23.21" layer="52"/>
+<rectangle x1="37.75" y1="19.97" x2="38.45" y2="20.67" layer="52"/>
+<rectangle x1="40.29" y1="22.51" x2="40.99" y2="23.21" layer="52"/>
+<rectangle x1="40.29" y1="19.97" x2="40.99" y2="20.67" layer="52"/>
+<rectangle x1="42.83" y1="22.51" x2="43.53" y2="23.21" layer="52"/>
+<rectangle x1="42.83" y1="19.97" x2="43.53" y2="20.67" layer="52"/>
+<wire x1="-44.579" y1="19.165" x2="-18.921" y2="19.165" width="0.2032" layer="22"/>
+<wire x1="-18.921" y1="19.165" x2="-18.921" y2="24.015" width="0.2032" layer="22"/>
+<wire x1="-18.921" y1="24.015" x2="-44.579" y2="24.015" width="0.2032" layer="22"/>
+<wire x1="-44.579" y1="24.015" x2="-44.579" y2="19.165" width="0.2032" layer="22"/>
+<pad name="X6_1" x="-20.32" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_2" x="-20.32" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_3" x="-22.86" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_4" x="-22.86" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_5" x="-25.4" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_6" x="-25.4" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_7" x="-27.94" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_8" x="-27.94" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_9" x="-30.48" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_10" x="-30.48" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_11" x="-33.02" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_12" x="-33.02" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_13" x="-35.56" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_14" x="-35.56" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_15" x="-38.1" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_16" x="-38.1" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_17" x="-40.64" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_18" x="-40.64" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_19" x="-43.18" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_20" x="-43.18" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="-17.572" y="22.852" size="1.1" layer="22" font="vector" rot="SMR0">1</text>
+<text x="-17.397" y="19.254" size="1.1" layer="22" font="vector" rot="SMR0">2</text>
+<rectangle x1="-43.53" y1="22.51" x2="-42.83" y2="23.21" layer="52"/>
+<rectangle x1="-43.53" y1="19.97" x2="-42.83" y2="20.67" layer="52"/>
+<rectangle x1="-40.99" y1="22.51" x2="-40.29" y2="23.21" layer="52"/>
+<rectangle x1="-40.99" y1="19.97" x2="-40.29" y2="20.67" layer="52"/>
+<rectangle x1="-38.45" y1="22.51" x2="-37.75" y2="23.21" layer="52"/>
+<rectangle x1="-38.45" y1="19.97" x2="-37.75" y2="20.67" layer="52"/>
+<rectangle x1="-35.91" y1="22.51" x2="-35.21" y2="23.21" layer="52"/>
+<rectangle x1="-35.91" y1="19.97" x2="-35.21" y2="20.67" layer="52"/>
+<rectangle x1="-33.37" y1="22.51" x2="-32.67" y2="23.21" layer="52"/>
+<rectangle x1="-33.37" y1="19.97" x2="-32.67" y2="20.67" layer="52"/>
+<rectangle x1="-30.83" y1="22.51" x2="-30.13" y2="23.21" layer="51" rot="R180"/>
+<rectangle x1="-30.83" y1="19.97" x2="-30.13" y2="20.67" layer="52" rot="R90"/>
+<rectangle x1="-28.29" y1="22.51" x2="-27.59" y2="23.21" layer="52"/>
+<rectangle x1="-28.29" y1="19.97" x2="-27.59" y2="20.67" layer="52"/>
+<rectangle x1="-25.75" y1="22.51" x2="-25.05" y2="23.21" layer="52"/>
+<rectangle x1="-25.75" y1="19.97" x2="-25.05" y2="20.67" layer="52"/>
+<rectangle x1="-23.21" y1="22.51" x2="-22.51" y2="23.21" layer="52"/>
+<rectangle x1="-23.21" y1="19.97" x2="-22.51" y2="20.67" layer="52"/>
+<rectangle x1="-20.67" y1="22.51" x2="-19.97" y2="23.21" layer="52"/>
+<rectangle x1="-20.67" y1="19.97" x2="-19.97" y2="20.67" layer="52"/>
+<wire x1="-44.579" y1="-24.015" x2="-18.921" y2="-24.015" width="0.2032" layer="22"/>
+<wire x1="-18.921" y1="-24.015" x2="-18.921" y2="-19.165" width="0.2032" layer="22"/>
+<wire x1="-18.921" y1="-19.165" x2="-44.579" y2="-19.165" width="0.2032" layer="22"/>
+<wire x1="-44.579" y1="-19.165" x2="-44.579" y2="-24.015" width="0.2032" layer="22"/>
+<pad name="X7_1" x="-20.32" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_2" x="-20.32" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_3" x="-22.86" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_4" x="-22.86" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_5" x="-25.4" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_6" x="-25.4" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_7" x="-27.94" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_8" x="-27.94" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_9" x="-30.48" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_10" x="-30.48" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_11" x="-33.02" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_12" x="-33.02" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_13" x="-35.56" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_14" x="-35.56" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_15" x="-38.1" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_16" x="-38.1" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_17" x="-40.64" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_18" x="-40.64" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_19" x="-43.18" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_20" x="-43.18" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="-17.572" y="-20.328" size="1.1" layer="22" font="vector" rot="SMR0">1</text>
+<text x="-17.397" y="-22.656" size="1.1" layer="22" font="vector" rot="SMR0">2</text>
+<rectangle x1="-43.53" y1="-20.67" x2="-42.83" y2="-19.97" layer="52"/>
+<rectangle x1="-43.53" y1="-23.21" x2="-42.83" y2="-22.51" layer="52"/>
+<rectangle x1="-40.99" y1="-20.67" x2="-40.29" y2="-19.97" layer="52"/>
+<rectangle x1="-40.99" y1="-23.21" x2="-40.29" y2="-22.51" layer="52"/>
+<rectangle x1="-38.45" y1="-20.67" x2="-37.75" y2="-19.97" layer="52"/>
+<rectangle x1="-38.45" y1="-23.21" x2="-37.75" y2="-22.51" layer="52"/>
+<rectangle x1="-35.91" y1="-20.67" x2="-35.21" y2="-19.97" layer="52"/>
+<rectangle x1="-35.91" y1="-23.21" x2="-35.21" y2="-22.51" layer="52"/>
+<rectangle x1="-33.37" y1="-20.67" x2="-32.67" y2="-19.97" layer="52"/>
+<rectangle x1="-33.37" y1="-23.21" x2="-32.67" y2="-22.51" layer="52"/>
+<rectangle x1="-30.83" y1="-20.67" x2="-30.13" y2="-19.97" layer="51" rot="R180"/>
+<rectangle x1="-30.83" y1="-23.21" x2="-30.13" y2="-22.51" layer="52" rot="R90"/>
+<rectangle x1="-28.29" y1="-20.67" x2="-27.59" y2="-19.97" layer="52"/>
+<rectangle x1="-28.29" y1="-23.21" x2="-27.59" y2="-22.51" layer="52"/>
+<rectangle x1="-25.75" y1="-20.67" x2="-25.05" y2="-19.97" layer="52"/>
+<rectangle x1="-25.75" y1="-23.21" x2="-25.05" y2="-22.51" layer="52"/>
+<rectangle x1="-23.21" y1="-20.67" x2="-22.51" y2="-19.97" layer="52"/>
+<rectangle x1="-23.21" y1="-23.21" x2="-22.51" y2="-22.51" layer="52"/>
+<rectangle x1="-20.67" y1="-20.67" x2="-19.97" y2="-19.97" layer="52"/>
+<rectangle x1="-20.67" y1="-23.21" x2="-19.97" y2="-22.51" layer="52"/>
+<wire x1="18.921" y1="-24.015" x2="44.579" y2="-24.015" width="0.2032" layer="22"/>
+<wire x1="44.579" y1="-24.015" x2="44.579" y2="-19.165" width="0.2032" layer="22"/>
+<wire x1="44.579" y1="-19.165" x2="18.921" y2="-19.165" width="0.2032" layer="22"/>
+<wire x1="18.921" y1="-19.165" x2="18.921" y2="-24.015" width="0.2032" layer="22"/>
+<pad name="X9_1" x="43.18" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_2" x="43.18" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_3" x="40.64" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_4" x="40.64" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_5" x="38.1" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_6" x="38.1" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_7" x="35.56" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_8" x="35.56" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_9" x="33.02" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_10" x="33.02" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_11" x="30.48" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_12" x="30.48" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_13" x="27.94" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_14" x="27.94" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_15" x="25.4" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_16" x="25.4" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_17" x="22.86" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_18" x="22.86" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_19" x="20.32" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X9_20" x="20.32" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="16.718" y="-20.328" size="1.1" layer="22" font="vector" rot="SMR0">19</text>
+<text x="16.893" y="-22.656" size="1.1" layer="22" font="vector" rot="SMR0">20</text>
+<rectangle x1="19.97" y1="-20.67" x2="20.67" y2="-19.97" layer="52"/>
+<rectangle x1="19.97" y1="-23.21" x2="20.67" y2="-22.51" layer="52"/>
+<rectangle x1="22.51" y1="-20.67" x2="23.21" y2="-19.97" layer="52"/>
+<rectangle x1="22.51" y1="-23.21" x2="23.21" y2="-22.51" layer="52"/>
+<rectangle x1="25.05" y1="-20.67" x2="25.75" y2="-19.97" layer="52"/>
+<rectangle x1="25.05" y1="-23.21" x2="25.75" y2="-22.51" layer="52"/>
+<rectangle x1="27.59" y1="-20.67" x2="28.29" y2="-19.97" layer="52"/>
+<rectangle x1="27.59" y1="-23.21" x2="28.29" y2="-22.51" layer="52"/>
+<rectangle x1="30.13" y1="-20.67" x2="30.83" y2="-19.97" layer="52"/>
+<rectangle x1="30.13" y1="-23.21" x2="30.83" y2="-22.51" layer="52"/>
+<rectangle x1="32.67" y1="-20.67" x2="33.37" y2="-19.97" layer="51" rot="R180"/>
+<rectangle x1="32.67" y1="-23.21" x2="33.37" y2="-22.51" layer="52" rot="R90"/>
+<rectangle x1="35.21" y1="-20.67" x2="35.91" y2="-19.97" layer="52"/>
+<rectangle x1="35.21" y1="-23.21" x2="35.91" y2="-22.51" layer="52"/>
+<rectangle x1="37.75" y1="-20.67" x2="38.45" y2="-19.97" layer="52"/>
+<rectangle x1="37.75" y1="-23.21" x2="38.45" y2="-22.51" layer="52"/>
+<rectangle x1="40.29" y1="-20.67" x2="40.99" y2="-19.97" layer="52"/>
+<rectangle x1="40.29" y1="-23.21" x2="40.99" y2="-22.51" layer="52"/>
+<rectangle x1="42.83" y1="-20.67" x2="43.53" y2="-19.97" layer="52"/>
+<rectangle x1="42.83" y1="-23.21" x2="43.53" y2="-22.51" layer="52"/>
+<text x="-43.18" y="-17.78" size="1.27" layer="21">X7</text>
+<text x="19.05" y="16.51" size="1.27" layer="21">x8</text>
+<text x="19.05" y="-17.78" size="1.27" layer="21">X9</text>
+<text x="-43.18" y="16.51" size="1.27" layer="21">X6</text>
+<wire x1="-44.45" y1="-24.13" x2="44.45" y2="-24.13" width="0.127" layer="21"/>
+<wire x1="44.45" y1="-24.13" x2="44.45" y2="24.13" width="0.127" layer="21"/>
+<wire x1="44.45" y1="24.13" x2="-44.45" y2="24.13" width="0.127" layer="21"/>
+<wire x1="-44.45" y1="24.13" x2="-44.45" y2="-24.13" width="0.127" layer="21"/>
+<hole x="2.54" y="20.32" drill="3.2"/>
+<hole x="15.24" y="-10.16" drill="3.2"/>
+</package>
+<package name="EK-TM4C1294-HALF">
+<wire x1="18.921" y1="-2.425" x2="44.579" y2="-2.425" width="0.2032" layer="22"/>
+<wire x1="44.579" y1="-2.425" x2="44.579" y2="2.425" width="0.2032" layer="22"/>
+<wire x1="44.579" y1="2.425" x2="18.921" y2="2.425" width="0.2032" layer="22"/>
+<wire x1="18.921" y1="2.425" x2="18.921" y2="-2.425" width="0.2032" layer="22"/>
+<pad name="X8_1" x="43.18" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_2" x="43.18" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_3" x="40.64" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_4" x="40.64" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_5" x="38.1" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_6" x="38.1" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_7" x="35.56" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_8" x="35.56" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_9" x="33.02" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_10" x="33.02" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_11" x="30.48" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_12" x="30.48" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_13" x="27.94" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_14" x="27.94" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_15" x="25.4" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_16" x="25.4" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_17" x="22.86" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_18" x="22.86" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_19" x="20.32" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X8_20" x="20.32" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="16.718" y="1.262" size="1.1" layer="22" font="vector" rot="SMR0">19</text>
+<text x="16.893" y="-2.336" size="1.1" layer="22" font="vector" rot="SMR0">20</text>
+<text x="-53.34" y="0.635" size="1.27" layer="25">&gt;NAME</text>
+<text x="-53.34" y="-1.905" size="1.27" layer="27">&gt;VALUE</text>
+<rectangle x1="19.97" y1="0.92" x2="20.67" y2="1.62" layer="52"/>
+<rectangle x1="19.97" y1="-1.62" x2="20.67" y2="-0.92" layer="52"/>
+<rectangle x1="22.51" y1="0.92" x2="23.21" y2="1.62" layer="52"/>
+<rectangle x1="22.51" y1="-1.62" x2="23.21" y2="-0.92" layer="52"/>
+<rectangle x1="25.05" y1="0.92" x2="25.75" y2="1.62" layer="52"/>
+<rectangle x1="25.05" y1="-1.62" x2="25.75" y2="-0.92" layer="52"/>
+<rectangle x1="27.59" y1="0.92" x2="28.29" y2="1.62" layer="52"/>
+<rectangle x1="27.59" y1="-1.62" x2="28.29" y2="-0.92" layer="52"/>
+<rectangle x1="30.13" y1="0.92" x2="30.83" y2="1.62" layer="52"/>
+<rectangle x1="30.13" y1="-1.62" x2="30.83" y2="-0.92" layer="52"/>
+<rectangle x1="32.67" y1="0.92" x2="33.37" y2="1.62" layer="51" rot="R180"/>
+<rectangle x1="32.67" y1="-1.62" x2="33.37" y2="-0.92" layer="52" rot="R90"/>
+<rectangle x1="35.21" y1="0.92" x2="35.91" y2="1.62" layer="52"/>
+<rectangle x1="35.21" y1="-1.62" x2="35.91" y2="-0.92" layer="52"/>
+<rectangle x1="37.75" y1="0.92" x2="38.45" y2="1.62" layer="52"/>
+<rectangle x1="37.75" y1="-1.62" x2="38.45" y2="-0.92" layer="52"/>
+<rectangle x1="40.29" y1="0.92" x2="40.99" y2="1.62" layer="52"/>
+<rectangle x1="40.29" y1="-1.62" x2="40.99" y2="-0.92" layer="52"/>
+<rectangle x1="42.83" y1="0.92" x2="43.53" y2="1.62" layer="52"/>
+<rectangle x1="42.83" y1="-1.62" x2="43.53" y2="-0.92" layer="52"/>
+<wire x1="-44.579" y1="-2.425" x2="-18.921" y2="-2.425" width="0.2032" layer="22"/>
+<wire x1="-18.921" y1="-2.425" x2="-18.921" y2="2.425" width="0.2032" layer="22"/>
+<wire x1="-18.921" y1="2.425" x2="-44.579" y2="2.425" width="0.2032" layer="22"/>
+<wire x1="-44.579" y1="2.425" x2="-44.579" y2="-2.425" width="0.2032" layer="22"/>
+<pad name="X6_1" x="-20.32" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_2" x="-20.32" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_3" x="-22.86" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_4" x="-22.86" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_5" x="-25.4" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_6" x="-25.4" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_7" x="-27.94" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_8" x="-27.94" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_9" x="-30.48" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_10" x="-30.48" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_11" x="-33.02" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_12" x="-33.02" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_13" x="-35.56" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_14" x="-35.56" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_15" x="-38.1" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_16" x="-38.1" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_17" x="-40.64" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_18" x="-40.64" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_19" x="-43.18" y="1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_20" x="-43.18" y="-1.27" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="-17.572" y="1.262" size="1.1" layer="22" font="vector" rot="SMR0">1</text>
+<text x="-17.397" y="-2.336" size="1.1" layer="22" font="vector" rot="SMR0">2</text>
+<rectangle x1="-43.53" y1="0.92" x2="-42.83" y2="1.62" layer="52"/>
+<rectangle x1="-43.53" y1="-1.62" x2="-42.83" y2="-0.92" layer="52"/>
+<rectangle x1="-40.99" y1="0.92" x2="-40.29" y2="1.62" layer="52"/>
+<rectangle x1="-40.99" y1="-1.62" x2="-40.29" y2="-0.92" layer="52"/>
+<rectangle x1="-38.45" y1="0.92" x2="-37.75" y2="1.62" layer="52"/>
+<rectangle x1="-38.45" y1="-1.62" x2="-37.75" y2="-0.92" layer="52"/>
+<rectangle x1="-35.91" y1="0.92" x2="-35.21" y2="1.62" layer="52"/>
+<rectangle x1="-35.91" y1="-1.62" x2="-35.21" y2="-0.92" layer="52"/>
+<rectangle x1="-33.37" y1="0.92" x2="-32.67" y2="1.62" layer="52"/>
+<rectangle x1="-33.37" y1="-1.62" x2="-32.67" y2="-0.92" layer="52"/>
+<rectangle x1="-30.83" y1="0.92" x2="-30.13" y2="1.62" layer="51" rot="R180"/>
+<rectangle x1="-30.83" y1="-1.62" x2="-30.13" y2="-0.92" layer="52" rot="R90"/>
+<rectangle x1="-28.29" y1="0.92" x2="-27.59" y2="1.62" layer="52"/>
+<rectangle x1="-28.29" y1="-1.62" x2="-27.59" y2="-0.92" layer="52"/>
+<rectangle x1="-25.75" y1="0.92" x2="-25.05" y2="1.62" layer="52"/>
+<rectangle x1="-25.75" y1="-1.62" x2="-25.05" y2="-0.92" layer="52"/>
+<rectangle x1="-23.21" y1="0.92" x2="-22.51" y2="1.62" layer="52"/>
+<rectangle x1="-23.21" y1="-1.62" x2="-22.51" y2="-0.92" layer="52"/>
+<rectangle x1="-20.67" y1="0.92" x2="-19.97" y2="1.62" layer="52"/>
+<rectangle x1="-20.67" y1="-1.62" x2="-19.97" y2="-0.92" layer="52"/>
+<text x="12.7" y="0" size="1.27" layer="21">x8</text>
+<text x="-16.51" y="0" size="1.27" layer="21">X6</text>
+<wire x1="-44.45" y1="-3.81" x2="44.45" y2="-3.81" width="0.127" layer="21"/>
+<wire x1="44.45" y1="-3.81" x2="44.45" y2="2.54" width="0.127" layer="21"/>
+<wire x1="44.45" y1="2.54" x2="-44.45" y2="2.54" width="0.127" layer="21"/>
+<wire x1="-44.45" y1="2.54" x2="-44.45" y2="-3.81" width="0.127" layer="21"/>
+<hole x="2.54" y="-1.27" drill="3.2"/>
+</package>
+<package name="EK-TM4C1294-HALFV">
+<text x="-13.97" y="13.335" size="1.27" layer="25">&gt;NAME</text>
+<text x="-13.97" y="10.795" size="1.27" layer="27">&gt;VALUE</text>
+<wire x1="-16.639" y1="19.165" x2="9.019" y2="19.165" width="0.2032" layer="22"/>
+<wire x1="9.019" y1="19.165" x2="9.019" y2="24.015" width="0.2032" layer="22"/>
+<wire x1="9.019" y1="24.015" x2="-16.639" y2="24.015" width="0.2032" layer="22"/>
+<wire x1="-16.639" y1="24.015" x2="-16.639" y2="19.165" width="0.2032" layer="22"/>
+<pad name="X6_1" x="7.62" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_2" x="7.62" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_3" x="5.08" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_4" x="5.08" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_5" x="2.54" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_6" x="2.54" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_7" x="0" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_8" x="0" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_9" x="-2.54" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_10" x="-2.54" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_11" x="-5.08" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_12" x="-5.08" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_13" x="-7.62" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_14" x="-7.62" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_15" x="-10.16" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_16" x="-10.16" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_17" x="-12.7" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_18" x="-12.7" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_19" x="-15.24" y="22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X6_20" x="-15.24" y="20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="10.368" y="22.852" size="1.1" layer="22" font="vector" rot="SMR0">1</text>
+<text x="10.543" y="19.254" size="1.1" layer="22" font="vector" rot="SMR0">2</text>
+<rectangle x1="-15.59" y1="22.51" x2="-14.89" y2="23.21" layer="52"/>
+<rectangle x1="-15.59" y1="19.97" x2="-14.89" y2="20.67" layer="52"/>
+<rectangle x1="-13.05" y1="22.51" x2="-12.35" y2="23.21" layer="52"/>
+<rectangle x1="-13.05" y1="19.97" x2="-12.35" y2="20.67" layer="52"/>
+<rectangle x1="-10.51" y1="22.51" x2="-9.81" y2="23.21" layer="52"/>
+<rectangle x1="-10.51" y1="19.97" x2="-9.81" y2="20.67" layer="52"/>
+<rectangle x1="-7.97" y1="22.51" x2="-7.27" y2="23.21" layer="52"/>
+<rectangle x1="-7.97" y1="19.97" x2="-7.27" y2="20.67" layer="52"/>
+<rectangle x1="-5.43" y1="22.51" x2="-4.73" y2="23.21" layer="52"/>
+<rectangle x1="-5.43" y1="19.97" x2="-4.73" y2="20.67" layer="52"/>
+<rectangle x1="-2.89" y1="22.51" x2="-2.19" y2="23.21" layer="51" rot="R180"/>
+<rectangle x1="-2.89" y1="19.97" x2="-2.19" y2="20.67" layer="52" rot="R90"/>
+<rectangle x1="-0.35" y1="22.51" x2="0.35" y2="23.21" layer="52"/>
+<rectangle x1="-0.35" y1="19.97" x2="0.35" y2="20.67" layer="52"/>
+<rectangle x1="2.19" y1="22.51" x2="2.89" y2="23.21" layer="52"/>
+<rectangle x1="2.19" y1="19.97" x2="2.89" y2="20.67" layer="52"/>
+<rectangle x1="4.73" y1="22.51" x2="5.43" y2="23.21" layer="52"/>
+<rectangle x1="4.73" y1="19.97" x2="5.43" y2="20.67" layer="52"/>
+<rectangle x1="7.27" y1="22.51" x2="7.97" y2="23.21" layer="52"/>
+<rectangle x1="7.27" y1="19.97" x2="7.97" y2="20.67" layer="52"/>
+<wire x1="-16.639" y1="-24.015" x2="9.019" y2="-24.015" width="0.2032" layer="22"/>
+<wire x1="9.019" y1="-24.015" x2="9.019" y2="-19.165" width="0.2032" layer="22"/>
+<wire x1="9.019" y1="-19.165" x2="-16.639" y2="-19.165" width="0.2032" layer="22"/>
+<wire x1="-16.639" y1="-19.165" x2="-16.639" y2="-24.015" width="0.2032" layer="22"/>
+<pad name="X7_1" x="7.62" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_2" x="7.62" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_3" x="5.08" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_4" x="5.08" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_5" x="2.54" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_6" x="2.54" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_7" x="0" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_8" x="0" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_9" x="-2.54" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_10" x="-2.54" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_11" x="-5.08" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_12" x="-5.08" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_13" x="-7.62" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_14" x="-7.62" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_15" x="-10.16" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_16" x="-10.16" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_17" x="-12.7" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_18" x="-12.7" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_19" x="-15.24" y="-20.32" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<pad name="X7_20" x="-15.24" y="-22.86" drill="1" diameter="1.5" shape="octagon" rot="R180"/>
+<text x="10.368" y="-20.328" size="1.1" layer="22" font="vector" rot="SMR0">1</text>
+<text x="10.543" y="-22.656" size="1.1" layer="22" font="vector" rot="SMR0">2</text>
+<rectangle x1="-15.59" y1="-20.67" x2="-14.89" y2="-19.97" layer="52"/>
+<rectangle x1="-15.59" y1="-23.21" x2="-14.89" y2="-22.51" layer="52"/>
+<rectangle x1="-13.05" y1="-20.67" x2="-12.35" y2="-19.97" layer="52"/>
+<rectangle x1="-13.05" y1="-23.21" x2="-12.35" y2="-22.51" layer="52"/>
+<rectangle x1="-10.51" y1="-20.67" x2="-9.81" y2="-19.97" layer="52"/>
+<rectangle x1="-10.51" y1="-23.21" x2="-9.81" y2="-22.51" layer="52"/>
+<rectangle x1="-7.97" y1="-20.67" x2="-7.27" y2="-19.97" layer="52"/>
+<rectangle x1="-7.97" y1="-23.21" x2="-7.27" y2="-22.51" layer="52"/>
+<rectangle x1="-5.43" y1="-20.67" x2="-4.73" y2="-19.97" layer="52"/>
+<rectangle x1="-5.43" y1="-23.21" x2="-4.73" y2="-22.51" layer="52"/>
+<rectangle x1="-2.89" y1="-20.67" x2="-2.19" y2="-19.97" layer="51" rot="R180"/>
+<rectangle x1="-2.89" y1="-23.21" x2="-2.19" y2="-22.51" layer="52" rot="R90"/>
+<rectangle x1="-0.35" y1="-20.67" x2="0.35" y2="-19.97" layer="52"/>
+<rectangle x1="-0.35" y1="-23.21" x2="0.35" y2="-22.51" layer="52"/>
+<rectangle x1="2.19" y1="-20.67" x2="2.89" y2="-19.97" layer="52"/>
+<rectangle x1="2.19" y1="-23.21" x2="2.89" y2="-22.51" layer="52"/>
+<rectangle x1="4.73" y1="-20.67" x2="5.43" y2="-19.97" layer="52"/>
+<rectangle x1="4.73" y1="-23.21" x2="5.43" y2="-22.51" layer="52"/>
+<rectangle x1="7.27" y1="-20.67" x2="7.97" y2="-19.97" layer="52"/>
+<rectangle x1="7.27" y1="-23.21" x2="7.97" y2="-22.51" layer="52"/>
+<text x="-15.24" y="-17.78" size="1.27" layer="21">X7</text>
+<text x="-15.24" y="16.51" size="1.27" layer="21">X6</text>
+<wire x1="-21.59" y1="-24.13" x2="10.16" y2="-24.13" width="0.127" layer="21"/>
+<wire x1="10.16" y1="24.13" x2="-21.59" y2="24.13" width="0.127" layer="21"/>
+<wire x1="-21.59" y1="24.13" x2="-21.59" y2="-24.13" width="0.127" layer="21"/>
+<wire x1="10.16" y1="24.13" x2="10.16" y2="-24.13" width="0.127" layer="21"/>
+</package>
+</packages>
+<symbols>
+<symbol name="SYM_EK_TM4C1294XL">
+<text x="5.08" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<rectangle x1="2.54" y1="-0.254" x2="4.318" y2="0.254" layer="94"/>
+<pin name="1" x="0" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="SYM_EK_TM4C1294XL_HALF">
+<text x="5.08" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<rectangle x1="2.54" y1="-0.254" x2="4.318" y2="0.254" layer="94"/>
+<pin name="1" x="0" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+<symbol name="SYM_EK_TM4C1294XL_HALFV">
+<text x="5.08" y="-0.762" size="1.524" layer="95">&gt;NAME</text>
+<rectangle x1="2.54" y1="-0.254" x2="4.318" y2="0.254" layer="94"/>
+<pin name="1" x="0" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="SH_EK_TM4C1294XL" prefix="CON">
+<description>Evaluation kit of Texas Instrument EK-TM4C1294XL shield</description>
+<gates>
+<gate name="_X6_1" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="27.94"/>
+<gate name="_X6_2" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="25.4"/>
+<gate name="_X6_3" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="22.86"/>
+<gate name="_X6_4" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="20.32"/>
+<gate name="_X6_5" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="17.78"/>
+<gate name="_X6_6" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="15.24"/>
+<gate name="_X6_7" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="12.7"/>
+<gate name="_X6_8" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="10.16"/>
+<gate name="_X6_9" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="7.62"/>
+<gate name="_X6_10" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="5.08"/>
+<gate name="_X6_11" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="2.54"/>
+<gate name="_X6_12" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="0"/>
+<gate name="_X6_13" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-2.54"/>
+<gate name="_X6_14" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-5.08"/>
+<gate name="_X6_15" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-7.62"/>
+<gate name="_X6_16" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-10.16"/>
+<gate name="_X6_17" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-12.7"/>
+<gate name="_X6_18" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-15.24"/>
+<gate name="_X6_19" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-17.78"/>
+<gate name="_X6_20" symbol="SYM_EK_TM4C1294XL" x="-25.4" y="-20.32"/>
+<gate name="_X7_1" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="27.94"/>
+<gate name="_X7_2" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="25.4"/>
+<gate name="_X7_3" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="22.86"/>
+<gate name="_X7_4" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="20.32"/>
+<gate name="_X7_5" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="17.78"/>
+<gate name="_X7_6" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="15.24"/>
+<gate name="_X7_7" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="12.7"/>
+<gate name="_X7_8" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="10.16"/>
+<gate name="_X7_9" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="7.62"/>
+<gate name="_X7_10" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="5.08"/>
+<gate name="_X7_11" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="2.54"/>
+<gate name="_X7_12" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="0"/>
+<gate name="_X7_13" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-2.54"/>
+<gate name="_X7_14" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-5.08"/>
+<gate name="_X7_15" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-7.62"/>
+<gate name="_X7_16" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-10.16"/>
+<gate name="_X7_17" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-12.7"/>
+<gate name="_X7_18" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-15.24"/>
+<gate name="_X7_19" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-17.78"/>
+<gate name="_X7_20" symbol="SYM_EK_TM4C1294XL" x="-2.54" y="-20.32"/>
+<gate name="_X8_1" symbol="SYM_EK_TM4C1294XL" x="17.78" y="27.94"/>
+<gate name="_X8_2" symbol="SYM_EK_TM4C1294XL" x="17.78" y="25.4"/>
+<gate name="_X8_3" symbol="SYM_EK_TM4C1294XL" x="17.78" y="22.86"/>
+<gate name="_X8_4" symbol="SYM_EK_TM4C1294XL" x="17.78" y="20.32"/>
+<gate name="_X8_5" symbol="SYM_EK_TM4C1294XL" x="17.78" y="17.78"/>
+<gate name="_X8_6" symbol="SYM_EK_TM4C1294XL" x="17.78" y="15.24"/>
+<gate name="_X8_7" symbol="SYM_EK_TM4C1294XL" x="17.78" y="12.7"/>
+<gate name="_X8_8" symbol="SYM_EK_TM4C1294XL" x="17.78" y="10.16"/>
+<gate name="_X8_9" symbol="SYM_EK_TM4C1294XL" x="17.78" y="7.62"/>
+<gate name="_X8_10" symbol="SYM_EK_TM4C1294XL" x="17.78" y="5.08"/>
+<gate name="_X8_11" symbol="SYM_EK_TM4C1294XL" x="17.78" y="2.54"/>
+<gate name="_X8_12" symbol="SYM_EK_TM4C1294XL" x="17.78" y="0"/>
+<gate name="_X8_13" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-2.54"/>
+<gate name="_X8_14" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-5.08"/>
+<gate name="_X8_15" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-7.62"/>
+<gate name="_X8_16" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-10.16"/>
+<gate name="_X8_17" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-12.7"/>
+<gate name="_X8_18" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-15.24"/>
+<gate name="_X8_19" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-17.78"/>
+<gate name="_X8_20" symbol="SYM_EK_TM4C1294XL" x="17.78" y="-20.32"/>
+<gate name="_X9_1" symbol="SYM_EK_TM4C1294XL" x="40.64" y="27.94"/>
+<gate name="_X9_2" symbol="SYM_EK_TM4C1294XL" x="40.64" y="25.4"/>
+<gate name="_X9_3" symbol="SYM_EK_TM4C1294XL" x="40.64" y="22.86"/>
+<gate name="_X9_4" symbol="SYM_EK_TM4C1294XL" x="40.64" y="20.32"/>
+<gate name="_X9_5" symbol="SYM_EK_TM4C1294XL" x="40.64" y="17.78"/>
+<gate name="_X9_7" symbol="SYM_EK_TM4C1294XL" x="40.64" y="12.7"/>
+<gate name="_X9_6" symbol="SYM_EK_TM4C1294XL" x="40.64" y="15.24"/>
+<gate name="_X9_9" symbol="SYM_EK_TM4C1294XL" x="40.64" y="7.62"/>
+<gate name="_X9_8" symbol="SYM_EK_TM4C1294XL" x="40.64" y="10.16"/>
+<gate name="_X9_10" symbol="SYM_EK_TM4C1294XL" x="40.64" y="5.08"/>
+<gate name="_X9_11" symbol="SYM_EK_TM4C1294XL" x="40.64" y="2.54"/>
+<gate name="_X9_12" symbol="SYM_EK_TM4C1294XL" x="40.64" y="0"/>
+<gate name="_X9_13" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-2.54"/>
+<gate name="_X9_14" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-5.08"/>
+<gate name="_X9_15" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-7.62"/>
+<gate name="_X9_16" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-10.16"/>
+<gate name="_X9_17" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-12.7"/>
+<gate name="_X9_18" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-15.24"/>
+<gate name="_X9_19" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-17.78"/>
+<gate name="_X9_20" symbol="SYM_EK_TM4C1294XL" x="40.64" y="-20.32"/>
+</gates>
+<devices>
+<device name="" package="EK-TM4C1294XL-SH">
+<connects>
+<connect gate="_X6_1" pin="1" pad="X6_1"/>
+<connect gate="_X6_10" pin="1" pad="X6_10"/>
+<connect gate="_X6_11" pin="1" pad="X6_11"/>
+<connect gate="_X6_12" pin="1" pad="X6_12"/>
+<connect gate="_X6_13" pin="1" pad="X6_13"/>
+<connect gate="_X6_14" pin="1" pad="X6_14"/>
+<connect gate="_X6_15" pin="1" pad="X6_15"/>
+<connect gate="_X6_16" pin="1" pad="X6_16"/>
+<connect gate="_X6_17" pin="1" pad="X6_17"/>
+<connect gate="_X6_18" pin="1" pad="X6_18"/>
+<connect gate="_X6_19" pin="1" pad="X6_19"/>
+<connect gate="_X6_2" pin="1" pad="X6_2"/>
+<connect gate="_X6_20" pin="1" pad="X6_20"/>
+<connect gate="_X6_3" pin="1" pad="X6_3"/>
+<connect gate="_X6_4" pin="1" pad="X6_4"/>
+<connect gate="_X6_5" pin="1" pad="X6_5"/>
+<connect gate="_X6_6" pin="1" pad="X6_6"/>
+<connect gate="_X6_7" pin="1" pad="X6_7"/>
+<connect gate="_X6_8" pin="1" pad="X6_8"/>
+<connect gate="_X6_9" pin="1" pad="X6_9"/>
+<connect gate="_X7_1" pin="1" pad="X7_1"/>
+<connect gate="_X7_10" pin="1" pad="X7_10"/>
+<connect gate="_X7_11" pin="1" pad="X7_11"/>
+<connect gate="_X7_12" pin="1" pad="X7_12"/>
+<connect gate="_X7_13" pin="1" pad="X7_13"/>
+<connect gate="_X7_14" pin="1" pad="X7_14"/>
+<connect gate="_X7_15" pin="1" pad="X7_15"/>
+<connect gate="_X7_16" pin="1" pad="X7_16"/>
+<connect gate="_X7_17" pin="1" pad="X7_17"/>
+<connect gate="_X7_18" pin="1" pad="X7_18"/>
+<connect gate="_X7_19" pin="1" pad="X7_19"/>
+<connect gate="_X7_2" pin="1" pad="X7_2"/>
+<connect gate="_X7_20" pin="1" pad="X7_20"/>
+<connect gate="_X7_3" pin="1" pad="X7_3"/>
+<connect gate="_X7_4" pin="1" pad="X7_4"/>
+<connect gate="_X7_5" pin="1" pad="X7_5"/>
+<connect gate="_X7_6" pin="1" pad="X7_6"/>
+<connect gate="_X7_7" pin="1" pad="X7_7"/>
+<connect gate="_X7_8" pin="1" pad="X7_8"/>
+<connect gate="_X7_9" pin="1" pad="X7_9"/>
+<connect gate="_X8_1" pin="1" pad="X8_1"/>
+<connect gate="_X8_10" pin="1" pad="X8_10"/>
+<connect gate="_X8_11" pin="1" pad="X8_11"/>
+<connect gate="_X8_12" pin="1" pad="X8_12"/>
+<connect gate="_X8_13" pin="1" pad="X8_13"/>
+<connect gate="_X8_14" pin="1" pad="X8_14"/>
+<connect gate="_X8_15" pin="1" pad="X8_15"/>
+<connect gate="_X8_16" pin="1" pad="X8_16"/>
+<connect gate="_X8_17" pin="1" pad="X8_17"/>
+<connect gate="_X8_18" pin="1" pad="X8_18"/>
+<connect gate="_X8_19" pin="1" pad="X8_19"/>
+<connect gate="_X8_2" pin="1" pad="X8_2"/>
+<connect gate="_X8_20" pin="1" pad="X8_20"/>
+<connect gate="_X8_3" pin="1" pad="X8_3"/>
+<connect gate="_X8_4" pin="1" pad="X8_4"/>
+<connect gate="_X8_5" pin="1" pad="X8_5"/>
+<connect gate="_X8_6" pin="1" pad="X8_6"/>
+<connect gate="_X8_7" pin="1" pad="X8_7"/>
+<connect gate="_X8_8" pin="1" pad="X8_8"/>
+<connect gate="_X8_9" pin="1" pad="X8_9"/>
+<connect gate="_X9_1" pin="1" pad="X9_1"/>
+<connect gate="_X9_10" pin="1" pad="X9_10"/>
+<connect gate="_X9_11" pin="1" pad="X9_11"/>
+<connect gate="_X9_12" pin="1" pad="X9_12"/>
+<connect gate="_X9_13" pin="1" pad="X9_13"/>
+<connect gate="_X9_14" pin="1" pad="X9_14"/>
+<connect gate="_X9_15" pin="1" pad="X9_15"/>
+<connect gate="_X9_16" pin="1" pad="X9_16"/>
+<connect gate="_X9_17" pin="1" pad="X9_17"/>
+<connect gate="_X9_18" pin="1" pad="X9_18"/>
+<connect gate="_X9_19" pin="1" pad="X9_19"/>
+<connect gate="_X9_2" pin="1" pad="X9_2"/>
+<connect gate="_X9_20" pin="1" pad="X9_20"/>
+<connect gate="_X9_3" pin="1" pad="X9_3"/>
+<connect gate="_X9_4" pin="1" pad="X9_4"/>
+<connect gate="_X9_5" pin="1" pad="X9_5"/>
+<connect gate="_X9_6" pin="1" pad="X9_6"/>
+<connect gate="_X9_7" pin="1" pad="X9_7"/>
+<connect gate="_X9_8" pin="1" pad="X9_8"/>
+<connect gate="_X9_9" pin="1" pad="X9_9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SH_EK_TM4C1294XL_HALF" prefix="CON">
+<gates>
+<gate name="_X6_1" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="35.56"/>
+<gate name="_X6_2" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="33.02"/>
+<gate name="_X6_3" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="30.48"/>
+<gate name="_X6_4" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="27.94"/>
+<gate name="_X6_5" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="25.4"/>
+<gate name="_X6_6" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="22.86"/>
+<gate name="_X6_7" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="20.32"/>
+<gate name="_X6_8" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="17.78"/>
+<gate name="_X6_9" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="15.24"/>
+<gate name="_X6_10" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="12.7"/>
+<gate name="_X6_11" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="10.16"/>
+<gate name="_X6_12" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="7.62"/>
+<gate name="_X6_13" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="5.08"/>
+<gate name="_X6_14" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="2.54"/>
+<gate name="_X6_15" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="0"/>
+<gate name="_X6_16" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="-2.54"/>
+<gate name="_X6_17" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="-5.08"/>
+<gate name="_X6_18" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="-7.62"/>
+<gate name="_X6_19" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="-10.16"/>
+<gate name="_X6_20" symbol="SYM_EK_TM4C1294XL_HALF" x="-17.78" y="-12.7"/>
+<gate name="_X8_1" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="35.56"/>
+<gate name="_X8_2" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="33.02"/>
+<gate name="_X8_3" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="30.48"/>
+<gate name="_X8_4" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="27.94"/>
+<gate name="_X8_5" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="25.4"/>
+<gate name="_X8_6" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="22.86"/>
+<gate name="_X8_7" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="20.32"/>
+<gate name="_X8_8" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="17.78"/>
+<gate name="_X8_9" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="15.24"/>
+<gate name="_X8_10" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="12.7"/>
+<gate name="_X8_11" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="10.16"/>
+<gate name="_X8_12" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="7.62"/>
+<gate name="_X8_13" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="5.08"/>
+<gate name="_X8_14" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="2.54"/>
+<gate name="_X8_15" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="0"/>
+<gate name="_X8_16" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="-2.54"/>
+<gate name="_X8_17" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="-5.08"/>
+<gate name="_X8_18" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="-7.62"/>
+<gate name="_X8_19" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="-10.16"/>
+<gate name="_X8_20" symbol="SYM_EK_TM4C1294XL_HALF" x="10.16" y="-12.7"/>
+</gates>
+<devices>
+<device name="" package="EK-TM4C1294-HALF">
+<connects>
+<connect gate="_X6_1" pin="1" pad="X6_1"/>
+<connect gate="_X6_10" pin="1" pad="X6_10"/>
+<connect gate="_X6_11" pin="1" pad="X6_11"/>
+<connect gate="_X6_12" pin="1" pad="X6_12"/>
+<connect gate="_X6_13" pin="1" pad="X6_13"/>
+<connect gate="_X6_14" pin="1" pad="X6_14"/>
+<connect gate="_X6_15" pin="1" pad="X6_15"/>
+<connect gate="_X6_16" pin="1" pad="X6_16"/>
+<connect gate="_X6_17" pin="1" pad="X6_17"/>
+<connect gate="_X6_18" pin="1" pad="X6_18"/>
+<connect gate="_X6_19" pin="1" pad="X6_19"/>
+<connect gate="_X6_2" pin="1" pad="X6_2"/>
+<connect gate="_X6_20" pin="1" pad="X6_20"/>
+<connect gate="_X6_3" pin="1" pad="X6_3"/>
+<connect gate="_X6_4" pin="1" pad="X6_4"/>
+<connect gate="_X6_5" pin="1" pad="X6_5"/>
+<connect gate="_X6_6" pin="1" pad="X6_6"/>
+<connect gate="_X6_7" pin="1" pad="X6_7"/>
+<connect gate="_X6_8" pin="1" pad="X6_8"/>
+<connect gate="_X6_9" pin="1" pad="X6_9"/>
+<connect gate="_X8_1" pin="1" pad="X8_1"/>
+<connect gate="_X8_10" pin="1" pad="X8_10"/>
+<connect gate="_X8_11" pin="1" pad="X8_11"/>
+<connect gate="_X8_12" pin="1" pad="X8_12"/>
+<connect gate="_X8_13" pin="1" pad="X8_13"/>
+<connect gate="_X8_14" pin="1" pad="X8_14"/>
+<connect gate="_X8_15" pin="1" pad="X8_15"/>
+<connect gate="_X8_16" pin="1" pad="X8_16"/>
+<connect gate="_X8_17" pin="1" pad="X8_17"/>
+<connect gate="_X8_18" pin="1" pad="X8_18"/>
+<connect gate="_X8_19" pin="1" pad="X8_19"/>
+<connect gate="_X8_2" pin="1" pad="X8_2"/>
+<connect gate="_X8_20" pin="1" pad="X8_20"/>
+<connect gate="_X8_3" pin="1" pad="X8_3"/>
+<connect gate="_X8_4" pin="1" pad="X8_4"/>
+<connect gate="_X8_5" pin="1" pad="X8_5"/>
+<connect gate="_X8_6" pin="1" pad="X8_6"/>
+<connect gate="_X8_7" pin="1" pad="X8_7"/>
+<connect gate="_X8_8" pin="1" pad="X8_8"/>
+<connect gate="_X8_9" pin="1" pad="X8_9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="SH_EK_TM4C1294XL_HALFV" prefix="CON">
+<description>&lt;b&gt;Low half shield for the TM4C1294 and TM4C123&lt;/b&gt;</description>
+<gates>
+<gate name="_X6_1" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="10.16"/>
+<gate name="_X6_2" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="7.62"/>
+<gate name="_X6_3" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="5.08"/>
+<gate name="_X6_4" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="2.54"/>
+<gate name="_X6_5" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="0"/>
+<gate name="_X6_6" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-2.54"/>
+<gate name="_X6_7" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-5.08"/>
+<gate name="_X6_8" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-7.62"/>
+<gate name="_X6_9" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-10.16"/>
+<gate name="_X6_10" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-12.7"/>
+<gate name="_X6_11" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-15.24"/>
+<gate name="_X6_12" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-17.78"/>
+<gate name="_X6_13" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-20.32"/>
+<gate name="_X6_14" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-22.86"/>
+<gate name="_X6_15" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-25.4"/>
+<gate name="_X6_16" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-27.94"/>
+<gate name="_X6_17" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-30.48"/>
+<gate name="_X6_18" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-33.02"/>
+<gate name="_X6_19" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-35.56"/>
+<gate name="_X6_20" symbol="SYM_EK_TM4C1294XL_HALFV" x="0" y="-38.1"/>
+<gate name="_X7_1" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="10.16"/>
+<gate name="_X7_2" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="7.62"/>
+<gate name="_X7_3" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="5.08"/>
+<gate name="_X7_4" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="2.54"/>
+<gate name="_X7_5" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="0"/>
+<gate name="_X7_6" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-2.54"/>
+<gate name="_X7_7" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-5.08"/>
+<gate name="_X7_8" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-7.62"/>
+<gate name="_X7_9" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-10.16"/>
+<gate name="_X7_10" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-12.7"/>
+<gate name="_X7_11" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-15.24"/>
+<gate name="_X7_12" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-17.78"/>
+<gate name="_X7_13" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-20.32"/>
+<gate name="_X7_14" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-22.86"/>
+<gate name="_X7_15" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-25.4"/>
+<gate name="_X7_16" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-27.94"/>
+<gate name="_X7_17" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-30.48"/>
+<gate name="_X7_18" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-33.02"/>
+<gate name="_X7_19" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-35.56"/>
+<gate name="_X7_20" symbol="SYM_EK_TM4C1294XL_HALFV" x="20.32" y="-38.1"/>
+</gates>
+<devices>
+<device name="" package="EK-TM4C1294-HALFV">
+<connects>
+<connect gate="_X6_1" pin="1" pad="X6_1"/>
+<connect gate="_X6_10" pin="1" pad="X6_10"/>
+<connect gate="_X6_11" pin="1" pad="X6_11"/>
+<connect gate="_X6_12" pin="1" pad="X6_12"/>
+<connect gate="_X6_13" pin="1" pad="X6_13"/>
+<connect gate="_X6_14" pin="1" pad="X6_14"/>
+<connect gate="_X6_15" pin="1" pad="X6_15"/>
+<connect gate="_X6_16" pin="1" pad="X6_16"/>
+<connect gate="_X6_17" pin="1" pad="X6_17"/>
+<connect gate="_X6_18" pin="1" pad="X6_18"/>
+<connect gate="_X6_19" pin="1" pad="X6_19"/>
+<connect gate="_X6_2" pin="1" pad="X6_2"/>
+<connect gate="_X6_20" pin="1" pad="X6_20"/>
+<connect gate="_X6_3" pin="1" pad="X6_3"/>
+<connect gate="_X6_4" pin="1" pad="X6_4"/>
+<connect gate="_X6_5" pin="1" pad="X6_5"/>
+<connect gate="_X6_6" pin="1" pad="X6_6"/>
+<connect gate="_X6_7" pin="1" pad="X6_7"/>
+<connect gate="_X6_8" pin="1" pad="X6_8"/>
+<connect gate="_X6_9" pin="1" pad="X6_9"/>
+<connect gate="_X7_1" pin="1" pad="X7_1"/>
+<connect gate="_X7_10" pin="1" pad="X7_10"/>
+<connect gate="_X7_11" pin="1" pad="X7_11"/>
+<connect gate="_X7_12" pin="1" pad="X7_12"/>
+<connect gate="_X7_13" pin="1" pad="X7_13"/>
+<connect gate="_X7_14" pin="1" pad="X7_14"/>
+<connect gate="_X7_15" pin="1" pad="X7_15"/>
+<connect gate="_X7_16" pin="1" pad="X7_16"/>
+<connect gate="_X7_17" pin="1" pad="X7_17"/>
+<connect gate="_X7_18" pin="1" pad="X7_18"/>
+<connect gate="_X7_19" pin="1" pad="X7_19"/>
+<connect gate="_X7_2" pin="1" pad="X7_2"/>
+<connect gate="_X7_20" pin="1" pad="X7_20"/>
+<connect gate="_X7_3" pin="1" pad="X7_3"/>
+<connect gate="_X7_4" pin="1" pad="X7_4"/>
+<connect gate="_X7_5" pin="1" pad="X7_5"/>
+<connect gate="_X7_6" pin="1" pad="X7_6"/>
+<connect gate="_X7_7" pin="1" pad="X7_7"/>
+<connect gate="_X7_8" pin="1" pad="X7_8"/>
+<connect gate="_X7_9" pin="1" pad="X7_9"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
+</drawing>
+</eagle>
