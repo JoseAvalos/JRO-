@@ -99,8 +99,7 @@ void setup()
   digitalWrite(LED, HIGH);
   //
   DDS_JRO.io_reset();
-  DDS_JRO.wrFrequency1(DDS_JRO.freq2binary(DEFAULT_FREQ / 4));
-
+  DDS_JRO.defaultSettings();
   //int c=0;
   while (true)
   {
