@@ -49,7 +49,7 @@
 #define DEFAULT_FREQ 49920000
 #define LED RED_LED
 
-
+#define PORT PM_3
 
 IPAddress IP(10, 10, 50, 185);
 byte MAC[] = {0x00, 0x1A, 0xB6, 0x02, 0xEC, 0x3E };
@@ -68,6 +68,8 @@ void setup()
   server.begin();
 
   pinMode(LED, OUTPUT);
+  pinMode(PORT, OUTPUT);
+  
   digitalWrite(LED, HIGH);
   Serial.begin(115200);
   Serial.println("#####################################");
@@ -97,10 +99,11 @@ void setup()
   //    screen.putc(0x31);
   //    */
   digitalWrite(LED, HIGH);
+  bool caso=false;
   //
   DDS_JRO.io_reset();
   DDS_JRO.defaultSettings();
-  //int c=0;
+  int c=0;
   while (true)
   {
     EthernetClient _client = server.available();
@@ -118,6 +121,14 @@ void setup()
     //        }
 
     delay(400);
+    c+=1;
+   
+    if(c=7){
+      digitalWrite(PORT , caso );
+      caso=!caso;
+      c=0;
+    }
+   
   }
 }
 
