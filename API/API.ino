@@ -16,7 +16,7 @@
 
    Description:
         This program shows the ethernet communication using json message
-        for the commands: READ, WRITE, STATUS, START, STOP.
+        for the commands: READ, WRITE, STATUS, START, STOP and CHANGEIP.
 
  ********************************************************************/
 /*   Adaptation by Jose Avalos. January 2017
@@ -81,16 +81,9 @@ void setup()
   while (true)
   {
     if (DDS_JRO.init());
-      break;
-
+        break;
     digitalWrite(LED, LOW);
     delay(10);
-
-    //        if (wasIPResetPressed())
-    //        {
-    //            eraseIpConfig();
-    //            mbed_reset();
-    //        }
   }
   //
   digitalWrite(LED, LOW);
@@ -99,15 +92,29 @@ void setup()
   //    screen.putc(0x31);
   //    */
   digitalWrite(LED, HIGH);
-  bool caso=false;
   //
   DDS_JRO.io_reset();
   DDS_JRO.defaultSettings();
   int c=0;
   while (true)
   {
+    int value = 0;
+    
     EthernetClient _client = server.available();
-    API_JRO.readcommand(_client);
+    value = API_JRO.readcommand(_client);
+
+    /*Case change IP*/
+    if (value==99)
+    {
+      change_ip_flag = 0;
+      Serial.println("Changing Ethernet configuration.");
+      Ethernet.setStaticIP(API_JRO._new_ip, API_JRO._new_gateway, API_JRO._new_subnet);
+      Serial.println("Ethernet connection ready.");
+      Serial.print("Server is at ");
+      Serial.println(Ethernet.localIP());
+    }
+
+ 
     //        if (dds_device.isRFEnabled()){
     //            LedR = 0;
     //        }
@@ -133,4 +140,3 @@ void setup()
 }
 
 void loop(){}
-
