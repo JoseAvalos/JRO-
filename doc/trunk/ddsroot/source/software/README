@@ -1,0 +1,25 @@
+PROGRAMAS DE CONFIGURACION DEL DDS:
+
+Existen dos aplicativos para la configuracion del DDS, uno de ellos utiliza el interface USB y
+el otro Ethernet.
+
+dds_ftdi:	Este script fue desarrollado en python y utiliza la libreria "d2xx" (FTDI).
+			Para generar la aplicacion para Windows debe utilizarse "py2exe".
+			Este script puede configurar tanto el DDS, el CR y el DIVISOR.
+			Solo puede comunicarse con tarjetas usb-serial que utilizan un chip FTDI.
+			
+			El codigo fuente de este script puede ser encontrado en:
+			
+			http://jro-dev.igp.gob.pe/svn/jro_hard/cr16ch/Trunk/source/py/Jro-USB_V1.2.py
+			
+dds_eth:	Este programa esta desarrollado en python y utiliza sockets (como cliente) para
+			comunicarse con el DDS (en modo servidor).
+			
+			Este desarrollo es parte del proyecto "Sistema Integrado de Radar" y el codigo
+			actualizado puede encontrarse en su repositorio:
+			
+			http://jro-dev.igp.gob.pe/svn/jro-soft/sir/
+			
+dds_serial: Este script fue desarrollado con la libreria estandar "py-serial" y ha sido probado en
+			Linux como en Mac. No es necesario que los dispositivos necesariamente utilicen un chip
+			FTDI.

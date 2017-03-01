@@ -1,0 +1,8 @@
+Interfaz USB-Serial
+
+Tarjeta disenada en Eagle v5.7
+
+Utilizada por el Controlador de Radar y el DDS tiene que ser programada 
+con el utilitario MPROG, el cual permite modificar el numero serial del FTDI usado.
+
+*El programa MPROG tambien puede ser encontrando en ddsroot/utils/MProg2.5Release.zip

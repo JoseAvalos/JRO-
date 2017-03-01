@@ -1,0 +1,26 @@
+COMPONENTES DEL DISPOSITIVO DDS:
+
+1. Sintetizador "dds_ad9854": Esta tarjeta fue desarrollada en Jicamarca y esta basada en
+							la tarjeta de evaluacion del CI AD9854. Puede usarse la Tarjeta DDS
+							disenada en Jicamarca o la tarjeta de evaluacion del AD9854
+							indistintamente.
+							
+2. Procesador "mcu_k64f"	: Esta tarjeta es el cerebro del dispositivo, ademas recibe los 
+							requerimientos desde los aplicativos (usb o web). Esta basada en la
+							tarjeta de desarrollo FRDM-K64F de Freescale. El desarrollo del firmware
+							fue realizado en mbed.
+							http://developer.mbed.org/users/miguelcordero191/code/JRO_DDSv2/
+
+3. Interface "usb_serial"	: Esta tarjeta es utilizada para convertir el puerto serial del MCU a
+							usb. El FTDI de la tarjeta usb-serial tiene que ser actualizado con 
+							un nuevo numero serial utilizando la aplicacion MPROG. 
+							
+							DDS S/N: DDS2_XXX
+							CR S/N:  CR2_XXXX
+							DIV S/N: DIV_XXXX
+							JARS S/N: JARS_XXX
+							
+4. Interface "lcd"			: Tarjeta interfaz para mostrar el estatus del DDS.
+
+5. Shield "DDS-MCU"			: Esta tarjeta se utiliza para interconectar el MCU con la tarjeta de 
+							evaluacion del DDS (o la tarjeta desarrollada en Jicamarca).

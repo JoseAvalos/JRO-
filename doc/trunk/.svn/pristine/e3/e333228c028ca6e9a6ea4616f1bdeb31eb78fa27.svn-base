@@ -1,0 +1,8 @@
+SHIELD MCU - DDS, UART
+
+Disenada en Eagle v6.1
+
+Utilizada para interconectar el FRDM-K64F con el DDS, USB, y el LCD.
+
+v1.2:
+Estandarizacion de conectores

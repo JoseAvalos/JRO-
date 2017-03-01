@@ -1,0 +1,24 @@
+Este programa fue escrito en MBED, el codigo puede ser encontrado en la siguiente direccion:
+http://developer.mbed.org/users/miguelcordero191/code/JRO_DDSv2/
+
+Nuevas Caracteristicas del DDSv2:
+
+- Deteccion del chip AD9854. Muestra de un mensaje por pantalla de "Dispositivo No detectado"
+- Deteccion de la conexion ethernet. Miuestra de un msj por pantalla de "Sin conexion"
+- Modulacion interna. None, Chirp, FSK, BPSK.
+- Configuracion por USB. Se ha implementado la confirmacion por USB.
+- Configuracion por Ethernet.
+- Cambio y salvado de IP, MASK y Gateway en memoria no volatil.
+- Visualizacion del estado del DDS: Habilitacion de la RF, Tipo de Modulacion, Frecuencia de salida,
+									IP, Mascara y Gateway.
+									
+
+Contenido de la carpeta:
+
+JRO_DDSv2_K64F.bin	:	Programa compilado para la tarjeta FRDM-K64F. Este debe ser copiado
+						a la tarjeta mediante el Open-SDA interface. (Conectar un cable USB
+						a dicho interface y copiar este archivo dentro de la unidad MBED).
+						Mas informacion en:
+						http://developer.mbed.org/platforms/FRDM-K64F/#downloading-a-program
+						
+JRO_DDSv2_K64F.zip	:	Copia del proyecto desarrollado en mbed.

@@ -1,0 +1,27 @@
+DESCRIPCION:
+
+En la carpeta dds_eth se encontra el software necesario para testear
+la interface ethernet del DDSv2.0.
+
+Programando por primera vez la frecuencia del DDSv2.0:
+
+1. Ensamblar el DDSv2.0
+2. Programar el firmware del FRDM-K64F y del FTDI ubicado en la tarjeta usb-serial.
+3. Conectar un clock de 10MHz en CLK_EXT y una senal TTL cuadrada en TX1.
+4. Conectar un cable ethernet directamente a la PC que se usara para el test.
+5. Configurar la ip de la PC a 192.168.7.3 con mascara 255.255.255.0 y gateway 192.168.7.1
+6. Conectar el DDSv2.0 a 110v o 220v.
+7. Ejecutar el script test_dds_eth.py
+8. Verificar una senal de 25Mhz a la salida del canal 1.
+
+Programando por primera vez la IP del DDSv2.0:
+
+1. Ensamblar el DDSv2.0
+2. Programar el firmware del FRDM-K64F y del FTDI ubicado en la tarjeta usb-serial.
+3. Conectar un clock de 10MHz en CLK_EXT.
+4. Conectar un cable ethernet directamente a la PC que se usara para el test.
+5. Configurar la ip de la PC a 192.168.7.3 con mascara 255.255.255.0 y gateway 192.168.7.1
+6. Conectar el DDSv2.0 a 110v o 220v.
+7. Modificar el IP y Mascar deseados dentro del script test_change_ip.py.
+8. Ejecutar el script test_change_ip.py --new-ip=[NEW IP] --new-mask=[NEW MASK]
+9. Verificar en la pantalla LCD que el ip ha cambiado.

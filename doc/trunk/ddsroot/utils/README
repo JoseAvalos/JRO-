@@ -1,0 +1,9 @@
+ARCHIVOS:
+
+	Mprog3.5Release.zip	:	Aplicativo para programar el numero serial de la tarjeta usb-serial.
+							Para usarlo descromprimir el archivo, ejecutar "Mprog 3.5 Release/MProg.exe"
+							y dentro de laaplicacion abrir el archivo ubicado en 
+							"Mprog 3.5 Release/Templates/dds2.ept"
+							Conectar la tarjeta "usb-serial" a programa a un puerto usb y luego cambiar
+							el numero de serie de "DDS2_004" a "DDS2_005" (ejemplo) y grabarlo.
+							
