@@ -33,6 +33,7 @@
 #include <ArduinoHttpServer.h>
 #include <AD9854.h>
 #include <string>
+#include <PinTiva.h>
 #include "Tiva.h"
 
 
@@ -96,6 +97,7 @@ void setup()
   DDS_JRO.io_reset();
   DDS_JRO.defaultSettings();
   int c=0;
+  bool caso=0;
   while (true)
   {
     int value = 0;
@@ -106,7 +108,6 @@ void setup()
     /*Case change IP*/
     if (value==99)
     {
-      change_ip_flag = 0;
       Serial.println("Changing Ethernet configuration.");
       Ethernet.setStaticIP(API_JRO._new_ip, API_JRO._new_gateway, API_JRO._new_subnet);
       Serial.println("Ethernet connection ready.");
